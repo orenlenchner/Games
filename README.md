@@ -4,11 +4,6 @@ Gun Brawl is a game by Oren Lenchner.
 
 The program uses the following libraries: SDL2, OpenGL (GLEW and glm), SDL_TTF (fonts).
 
-#### Credits ####
-
-The program uses picopng from lodePNG (http://lodev.org/lodepng/) to load .png files.
-SpriteFont.cpp and SpiteFont.h are open sourced files created by Cristian Zaloj and Benjamin Arnold.
-
 #### Description ####
 
 Gun Brawl is a game where the objective is to clear 15 waves of enemies without dying. The waves get 
@@ -24,3 +19,8 @@ to go into or out of fullscreen mode use F.
 #### Download ####
 
 Available upon request.
+
+#### Credits ####
+
+The program uses picopng from lodePNG (http://lodev.org/lodepng/) to load .png files.
+SpriteFont.cpp and SpiteFont.h are open sourced files created by Cristian Zaloj and Benjamin Arnold.

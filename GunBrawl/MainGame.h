@@ -137,5 +137,5 @@ private:
 	GameEngine::AudioEngine m_audioEngine;
 	bool m_musicOn = false;
 
-	std::string m_version = "0.7";
+	std::string m_version = "1.0";
 };

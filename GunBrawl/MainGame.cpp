@@ -13,8 +13,6 @@
 #include <algorithm>
 #include <glm/gtx/rotate_vector.hpp>
 
-
-
 /***** CONSTANTS ******/
 
 // Player
@@ -129,6 +127,8 @@ const float BLOOD_DECAY_RATE = 0.05f;
 
 // Score
 const float SCORE_MULTIPLIER_PER_WAVE = 10;
+
+/********************/
 
 MainGame::MainGame() :
 	m_screenWidth(1280),
@@ -766,6 +766,9 @@ void MainGame::drawHUD() {
 				sprintf_s(buffer, "Use MOUSE to aim and LEFT CLICK to fire");
 				m_spriteFont->draw(m_hudSpriteBatch, buffer, glm::vec2(m_screenWidth / 2, m_screenHeight / 2 + FONT_RESOLUTION * 3),
 					glm::vec2(1.0), 0.0f, GameEngine::ColorRGBA8(255, 255, 255, 255), GameEngine::Justification::MIDDLE);
+				sprintf_s(buffer, "Press F to toggle fullscreen mode");
+				m_spriteFont->draw(m_hudSpriteBatch, buffer, glm::vec2(m_screenWidth / 2, m_screenHeight / 2 + FONT_RESOLUTION * 2),
+					glm::vec2(1.0), 0.0f, GameEngine::ColorRGBA8(255, 255, 255, 255), GameEngine::Justification::MIDDLE);
 			}
 			else {
 				sprintf_s(buffer, "Welcome to Gun Brawl");
@@ -774,8 +777,11 @@ void MainGame::drawHUD() {
 				sprintf_s(buffer, "Press SPACE to play or pause");
 				m_spriteFont->draw(m_hudSpriteBatch, buffer, glm::vec2(m_screenWidth / 2, m_screenHeight / 2 + FONT_RESOLUTION * 5),
 					glm::vec2(1.0), 0.0f, GameEngine::ColorRGBA8(255, 255, 255, 255), GameEngine::Justification::MIDDLE);
-				sprintf_s(buffer, "Press I for instructions");
+				sprintf_s(buffer, "Press F to toggle fullscreen mode");
 				m_spriteFont->draw(m_hudSpriteBatch, buffer, glm::vec2(m_screenWidth / 2, m_screenHeight / 2 + FONT_RESOLUTION * 4),
+					glm::vec2(1.0), 0.0f, GameEngine::ColorRGBA8(255, 255, 255, 255), GameEngine::Justification::MIDDLE);
+				sprintf_s(buffer, "Press I for instructions");
+				m_spriteFont->draw(m_hudSpriteBatch, buffer, glm::vec2(m_screenWidth / 2, m_screenHeight / 2 + FONT_RESOLUTION * 3),
 					glm::vec2(1.0), 0.0f, GameEngine::ColorRGBA8(255, 255, 255, 255), GameEngine::Justification::MIDDLE);
 			}
 		}

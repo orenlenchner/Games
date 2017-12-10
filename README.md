@@ -1,11 +1,8 @@
-Gun Brawl is a game by Oren Lenchner
+Gun Brawl is a game by Oren Lenchner.
 
 #### Libraries ####
 
-The program uses the following libraries:
-SDL2
-OpenGL (GLEW and glm)
-SDL_TTF (fonts)
+The program uses the following libraries: SDL2, OpenGL (GLEW and glm), SDL_TTF (fonts).
 
 #### Credits ####
 

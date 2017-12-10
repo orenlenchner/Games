@@ -107,8 +107,6 @@ const float SHOTGUN_DAMAGE = 20.0f;
 const float SHOTGUN_BULLET_SPEED = 30.0f;
 const float SHOTGUN_RANGE = 120.0f;
 
-// Window
-
 // Camera and Font
 const float CAMERA_SCALE_CONSTANT = 2440.0f;
 const float CAMERA_SPEED = 2.0f;

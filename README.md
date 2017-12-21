@@ -24,3 +24,9 @@ Available upon request.
 
 The program uses picopng from lodePNG (http://lodev.org/lodepng/) to load .png files.
 SpriteFont.cpp and SpiteFont.h are open sourced files created by Cristian Zaloj and Benjamin Arnold.
+
+The program uses the following music:
+"Killers"
+Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0
+http://creativecommons.org/licenses/by/3.0/

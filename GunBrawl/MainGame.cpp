@@ -267,7 +267,7 @@ void MainGame::gameLoop() {
 
 		if (m_gameState == GameState::PLAY) {
 			if (!m_musicOn) {
-				GameEngine::Music music = m_audioEngine.loadMusic("Sounds/Battle.wav");
+				GameEngine::Music music = m_audioEngine.loadMusic("Sounds/Killers.wav");
 				music.play(-1);
 				m_musicOn = true;
 			}

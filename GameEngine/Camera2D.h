@@ -31,7 +31,7 @@ namespace GameEngine {
 		glm::vec2 getPosition() { return m_position; }
 		float getScale() { return m_scale; }
 		glm::mat4 getCameraMatrix() { return m_cameraMatrix; }
-		float getRelativeScale() { return m_screenHeight / m_screenWidth; }
+		float getRelativeScale() { return (float)m_screenHeight / (float)m_screenWidth; }
 
 	private:
 		int m_screenWidth, m_screenHeight;

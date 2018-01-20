@@ -36,7 +36,7 @@ public:
 	void playDeathSound() { m_deathSound.play(); }
 
 	// Setters
-	void setHealth(int health) { m_health = health; }
+	void setHealth(float health) { m_health = health; }
 
 	// Getters
 	glm::vec2 getPosition() const { return m_position; }

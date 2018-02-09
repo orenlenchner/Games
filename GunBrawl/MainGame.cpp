@@ -70,6 +70,8 @@ const float PISTOL_ENEMY_HEALTH = 200.0f;
 const float PISTOL_ENEMY_HEALTH_REGEN = 0.0f;
 const float PISTOL_ENEMY_SCORE = 10.0f;
 
+const float PISTOL_ENEMY_LASTSPAWNWAVE = 10;
+
 // Shotgun Enemy
 const float SHOTGUN_ENEMY_SPEED = 6.0f;
 const float SHOTGUN_ENEMY_RANGE = 700.0f;
@@ -78,6 +80,11 @@ const float SHOTGUN_ENEMY_HEALTH = 500.0f;
 const float SHOTGUN_ENEMY_HEALTH_REGEN = 0.0f;
 const float SHOTGUN_ENEMY_SCORE = 20.0f;
 
+const float SHOTGUN_ENEMY_STARTSPAWNWAVE = 5;
+
+// Will spawn numWaves - SHOTGUN_ENEMY_SPAWNNUMBEROFFSET enemies each wave
+const float SHOTGUN_ENEMY_SPAWNNUMBEROFFSET = 5;
+
 // Bomb Enemy
 const float BOMB_ENEMY_SPEED = 9.0f;
 const float BOMB_ENEMY_RANGE = 1000.0f;
@@ -85,6 +92,11 @@ const float BOMB_ENEMY_DAMAGE = 250.0f;
 const float BOMB_ENEMY_HEALTH = 0.0f;
 const float BOMB_ENEMY_HEALTH_REGEN = 0.0f;
 const float BOMB_ENEMY_SCORE = 10.0f;
+
+const float BOMB_ENEMY_STARTSPAWNWAVE = 10;
+
+// Will spawn numWaves - BOMB_ENEMY_SPAWNNUMBEROFFSET enemies each wave
+const float BOMB_ENEMY_SPAWNNUMBEROFFSET = 5;
 
 // Enemy guns
 // Pistol
@@ -593,7 +605,7 @@ void MainGame::startNextWave() {
 		// Increase spawn speed
 		m_spawners[i]->setSpawnSpeed(DEFAULT_SPAWN_SPEED - (SPAWN_SPEED_MULTIPLIER * m_waves));
 		// Pistol Enemies
-		if (m_waves <= 10) {
+		if (m_waves <= PISTOL_ENEMY_LASTSPAWNWAVE) {
 			for (int j = 0; j < m_waves; j++) {
 				Enemy* pistolEnemy = new Enemy;
 				Gun* pistolEnemyGun = new Gun(PISTOL_NAME, &m_enemyBullets, PISTOL_FIRERATE, PISTOL_BULLETS_PER_SHOT, PISTOL_SPREAD,
@@ -605,8 +617,8 @@ void MainGame::startNextWave() {
 			}
 		}
 		// Shotgun Enemies
-		if (m_waves > 5) {
-			for (int j = 5; j < m_waves; j++) {
+		if (m_waves > SHOTGUN_ENEMY_STARTSPAWNWAVE) {
+			for (int j = SHOTGUN_ENEMY_SPAWNNUMBEROFFSET; j < m_waves; j++) {
 				Enemy* shotgunEnemy = new Enemy;
 				Gun* shotgunEnemyGun = new Gun(SHOTGUN_NAME, &m_enemyBullets, SHOTGUN_FIRERATE, SHOTGUN_BULLETS_PER_SHOT, SHOTGUN_SPREAD,
 					SHOTGUN_DAMAGE, SHOTGUN_BULLET_SPEED, SHOTGUN_RANGE, m_audioEngine.loadSoundEffect("Sounds/shotgun.wav"));
@@ -617,8 +629,8 @@ void MainGame::startNextWave() {
 			}
 		}
 		// Bomb Enemies
-		if (m_waves > 10) {
-			for (int j = 5; j < m_waves; j++) {
+		if (m_waves > BOMB_ENEMY_STARTSPAWNWAVE) {
+			for (int j = BOMB_ENEMY_STARTSPAWNWAVE; j < m_waves; j++) {
 				Enemy* bombEnemy = new Enemy;
 				bombEnemy->init(BOMB_ENEMY_SPEED, m_spawners[i]->getPosition(), BOMB_ENEMY_RANGE, BOMB_ENEMY_DAMAGE,
 					BOMB_ENEMY_HEALTH, BOMB_ENEMY_HEALTH_REGEN, BOMB_ENEMY_SCORE, NULL,

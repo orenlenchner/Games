@@ -25,8 +25,7 @@ namespace GameEngine {
 	}
 
 	Glyph::Glyph(const glm::vec4& destRect, const glm::vec4& uvRect, GLuint Texture, float Depth, const ColorRGBA8& color, float angle) :
-		texture(Texture),
-		depth(Depth) {
+		texture(Texture), depth(Depth) {
 
 		glm::vec2 halfDims(destRect.z / 2.0f, destRect.w / 2.0f);
 
